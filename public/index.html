@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>Dane a poplatky – Bratislava</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <img src="BAlogo_centr_cervene_cmyk-01.png" alt="Bratislava" class="logo" onerror="this.style.display='none'; document.getElementById('logo-text').style.display='flex'">
+      <div id="logo-text" class="logo-fallback" style="display:none">
+        <span class="logo-ba">BA</span>
+      </div>
+      <div class="header-title">
+        <h1>Dane a poplatky</h1>
+        <p class="header-sub">Informačný asistent mesta Bratislava</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Chat area -->
+    <div class="chat-container" id="chatContainer">
+      <div class="welcome-message" id="welcomeMessage">
+        <div class="welcome-icon">🏛️</div>
+        <h2>Dobrý deň!</h2>
+        <p>Som váš asistent pre dane a poplatky mesta Bratislava.<br>
+        Môžete sa ma opýtať hlasom alebo písomne, prípadne si vybrať z najčastejších otázok.</p>
+      </div>
+    </div>
+
+    <!-- Frequently asked questions -->
+    <div class="faq-section" id="faqSection">
+      <h2 class="faq-title">Najčastejšie otázky</h2>
+      <div class="faq-grid">
+        <button class="faq-btn" data-question="Kedy musím podať daňové priznanie k dani z nehnuteľností?">
+          <span class="faq-icon">📅</span>
+          Termíny podania daňového priznania
+        </button>
+        <button class="faq-btn" data-question="Aké daňové úľavy existujú pre dôchodcov a osoby s ťažkým zdravotným postihnutím?">
+          <span class="faq-icon">♿</span>
+          Úľavy pre dôchodcov a ŤZP
+        </button>
+        <button class="faq-btn" data-question="Ako môžem zaplatiť daň z nehnuteľností online?">
+          <span class="faq-icon">💳</span>
+          Online platba daní
+        </button>
+        <button class="faq-btn" data-question="Kde sa nachádza pokladnica magistrátu a aké sú úradné hodiny?">
+          <span class="faq-icon">🏢</span>
+          Úradné hodiny a pokladnica
+        </button>
+        <button class="faq-btn" data-question="Zrušili SIPO platby? Ako mám teraz platiť?">
+          <span class="faq-icon">ℹ️</span>
+          Zmeny v platbách od 2026
+        </button>
+        <button class="faq-btn" data-question="Akú sadzbu má daň za ubytovanie v Bratislave?">
+          <span class="faq-icon">🏨</span>
+          Daň za ubytovanie
+        </button>
+        <button class="faq-btn" data-question="Ako sa platí poplatok za komunálny odpad?">
+          <span class="faq-icon">♻️</span>
+          Komunálny odpad
+        </button>
+        <button class="faq-btn" data-question="Ako požiadať o povolenie na užívanie verejného priestranstva – terasa alebo stánok?">
+          <span class="faq-icon">☕</span>
+          Verejné priestranstvo – terasy
+        </button>
+        <button class="faq-btn" data-question="Na akú emailovú adresu a telefónne číslo sa môžem obrátiť so svojou daňovou otázkou?">
+          <span class="faq-icon">📞</span>
+          Kontakty na daňový úrad
+        </button>
+      </div>
+    </div>
+
+    <!-- Input area -->
+    <div class="input-area">
+      <div class="input-row">
+        <button class="mic-btn" id="micBtn" title="Hovoriť" aria-label="Spustiť hlasový vstup">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 14c1.66 0 3-1.34 3-3V5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.91-3c-.49 0-.9.36-.98.85C16.52 14.2 14.47 16 12 16s-4.52-1.8-4.93-4.15c-.08-.49-.49-.85-.98-.85-.61 0-1.09.54-1 1.14.49 3 2.89 5.35 5.91 5.78V20c0 .55.45 1 1 1s1-.45 1-1v-2.08c3.02-.43 5.42-2.78 5.91-5.78.1-.6-.39-1.14-1-1.14z"/>
+          </svg>
+        </button>
+        <textarea
+          id="userInput"
+          class="user-input"
+          placeholder="Napíšte svoju otázku..."
+          rows="1"
+          maxlength="500"
+          aria-label="Vaša otázka"
+        ></textarea>
+        <button class="send-btn" id="sendBtn" title="Odoslať" aria-label="Odoslať otázku">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+          </svg>
+        </button>
+      </div>
+      <div class="mic-status" id="micStatus"></div>
+    </div>
+
+  </main>
+
+  <!-- Speaking indicator -->
+  <div class="speaking-overlay" id="speakingOverlay" style="display:none">
+    <div class="speaking-box">
+      <div class="sound-bars">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+      <p>Asistent hovorí...</p>
+      <button class="stop-speaking-btn" id="stopSpeakingBtn">Zastaviť</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
