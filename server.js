@@ -9,164 +9,180 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 const KNOWLEDGE_BASE = `
-Si daňový asistent mesta Bratislava. Odpovedáš VÝHRADNE na otázky týkajúce sa daní a poplatkov mesta Bratislava.
-Odpovedaj vždy v slovenčine, stručne a zrozumiteľne. Ak otázka nesúvisí s daňami/poplatkami Bratislavy, zdvorilo presmeruj.
+Si danovy asistent mesta Bratislava. Odpovedas VYHRADNE na otazky tykajuce sa dani a poplatkov mesta Bratislava.
+Odpovedaj vzdy v slovenskom jazyku, strucne a zrozumitelne. Ak otazka nesuvisí s danami/poplatkami Bratislavy, zdvorilo presmeruj.
+Pouzivaj spravne diakritiku vo svojich odpovediach.
 
-=== BÁZA VEDOMOSTÍ: DANE A POPLATKY MESTA BRATISLAVA ===
+=== BAZA VEDOMOSTI: DANE A POPLATKY MESTA BRATISLAVA ===
 
-## PREHĽAD DANÍ A POPLATKOV
+## ROZDELENIE SPRAVY DANI
 
-Bratislavská samospráva spravuje tieto dane a poplatky:
-1. Daň z nehnuteľností
-2. Daň za ubytovanie
-3. Daň za užívanie verejného priestranstva
-4. Poplatok za komunálny odpad a drobný stavebný odpad
-5. Hazardné hry a výmaz z obchodného registra
+Magistrat (mesto) spravuje:
+- Dan z nehnutelnosti
+- Dan za ubytovanie
+- Dan za uzivanie verejneho priestranstva (mestske komunikacie I. a II. triedy)
+- Poplatok za komunalne odpady a drobne stavebne odpady
+- Odvody z hazardnych hier
 
-Mestské časti spravujú samostatne: daň za psa, daň za predajné automaty, daň za nevýherné hracie prístroje a daň za vjazd do historickej časti mesta.
-
----
-
-## DAŇ Z NEHNUTEĽNOSTÍ
-
-### Kto podáva daňové priznanie?
-Daňové priznanie podávate, ak ste v predchádzajúcom roku:
-- Kúpili, predali alebo darovali nehnuteľnosť
-- Dostali právoplatné rozhodnutie o stavebnom zámere
-- Dostali právoplatné kolaudačné osvedčenie
-- Zdedili nehnuteľnosť
-- Vydražili nehnuteľnosť
-
-### Termíny podania
-- Kúpa/predaj/darovanie, stavebné konanie, kolaudácia → do 31. januára
-- Dedenie → do 30 dní od vzniku daňovej povinnosti
-- Dražba → do 31 dní od schválenia príklepu súdom
-
-### Daňové úľavy (fyzické osoby)
-- **50% zníženie dane z pozemkov** pre osoby staršie ako 65 rokov
-- **70% zníženie dane** zo stavieb a bytov určených na trvalé bývanie pre:
-  - osoby staršie ako 65 rokov
-  - držiteľov preukazu ŤZP (ťažko zdravotne postihnutý)
-  - bezvládne osoby
-- **50% zníženie** pri garážach pre vozidlá osôb s ŤZP
-- Úľavy sa uplatňujú podaním daňového priznania do 31. januára
-
-### Ako podať daňové priznanie?
-- **Online:** cez Bratislavské konto (s podpisom pomocou občianskeho preukazu s čipom)
-- **Papierovo:** tlačený formulár poštou na adresu Primaciálne námestie 1, 811 01 Bratislava, alebo osobne
-
-### Ako zaplatiť daň z nehnuteľností?
-- Online cez Bratislavské konto (QR kód, platobná brána, Apple Pay, Google Pay)
-- Na základe rozhodnutia doručeného poštou (bankový prevod)
-- Osobne v Novej radnici, Primaciálne námestie 1
-
-### Termíny vyrubovania
-Daň z nehnuteľností sa vyrubuje apríl – máj.
+Mestske casti spravuju samostatne: dan za psa, dan za predajne automaty, dan za nevyherne hracie pristroje, dan za vjazd do historickeho jadra.
 
 ---
 
-## POPLATOK ZA KOMUNÁLNY ODPAD
+## DAN Z NEHNUTELNOSTI
 
-### Kto platí?
-Poplatok platí každý, kto má v Bratislave trvalý alebo prechodný pobyt, alebo je vlastníkom/správcom nehnuteľnosti.
+### Kedy podat danove priznanie?
+- Kupa, darovanie, predaj, BSM, stavebne povolenie, kolaudacia, zmena vymery pozemku -> do 31. januara nasledujuceho roka
+- Dedicstvo -> do 30 dni od vzniku danovej povinnosti
+- Drazba -> do 31 dni od schvalenia priklep
 
-### Termíny
-Poplatok za komunálny odpad sa vyrubuje vo februári.
+Pri predaji nehnutelnosti sa podava ciastkove danove priznanie (zanik povinnosti) tiez do 31. januara.
 
-### Ako zaplatiť?
-- Online cez Bratislavské konto (QR kód, platobná brána, Apple Pay, Google Pay)
-- Bankový prevod
-- Poštový poukaz
-- Osobne v hotovosti (do 300 €) na pokladni magistrátu v Novej radnici
+### Danove ulavy (fyzicke osoby)
+- 50% znizenie dane z pozemkov pre osoby starsie ako 65 rokov
+- 70% znizenie dane zo stavieb a bytov pre osoby nad 65 rokov, drzitelov TZP/TZP-S alebo im blizke zavisle osoby (musi ist o trvale byvanie)
+- 50% znizenie dane z garáží pre osoby s TZP, ak sluzba na prepravu
+- Ulavy je potrebne uplatnit DO 31. JANUARA daneho roka
 
----
+### Podanie danoveho priznania
+- Online: Bratislavske konto + eID podpis (obciansky preukaz s cipom)
+- Papierovo: formular postou alebo osobne na Primacialne nam. 1 alebo Blagoevova 9
 
-## DAŇ ZA UBYTOVANIE
+### Platba dane z nehnutelnosti
+- Online: konto.bratislava.sk (QR kod, platobna brana, Apple Pay, Google Pay)
+- Bankovy prevod na zaklade rozhodnutia
+- Osobne: Primacialne nam. 1 – hotovost aj karta | Blagoevova 9 – len karta (od 1. 12. 2025)
 
-### Kto platí?
-Prevádzkovatelia ubytovacích zariadení (hotely, penzióny, apartmány, Airbnb a pod.)
-
-### Sadzba dane (od 1. 7. 2023)
-- **3,50 €** za osobu a prenocovanie (mestská časť Staré Mesto)
-- **3,00 €** za osobu a prenocovanie (ostatné mestské časti)
-- Základ dane: počet prenocovaní, maximálne 60 prenocovaní jednej osoby za rok
-
-### Postup
-1. Do 30 dní od začatia činnosti zaslať **Ohlásenie vzniku a zániku činnosti ubytovacieho zariadenia** + výpis z registra
-2. Po ohlásení dostanete 10-miestny variabilný symbol (mení sa každý mesiac)
-3. Po skončení mesiaca odoslať mesačné vyúčtovanie
-4. Daň uhradiť do **15. dňa v mesiaci za uplynulý mesiac** (bankový prevod alebo hotovosť)
-
-### Kontakt pre daň za ubytovanie
-Bc. Dajana Baloghová, tel.: +421 910 512 674
+### Terminy
+- Rozhodnutia sa dorucuju: APRIL az MAJ
 
 ---
 
-## DAŇ ZA UŽÍVANIE VEREJNÉHO PRIESTRANSTVA
+## POPLATOK ZA KOMUNALNY ODPAD
 
-### Čo sa považuje za verejné priestranstvo?
-Verejnosti prístupné pozemky vo vlastníctve hlavného mesta: miestne komunikácie, parkoviská, námestia, zeleň.
+### Kto plati?
+Fyzicke osoby s trvalym alebo prechodnym pobytom v Bratislave, vlastnici a spravci nehnutelnosti, podnikatelia.
 
-### Na čo sa vzťahuje?
-- Organizácia podujatí a akcií
-- Umiestnenie terás a vonkajšieho sedenia
-- Rozkopávkové práce
-- Predaj z prenosných zariadení
-- Stavebné zariadenia a materiály
-- Trvalé parkovanie vozidla na vyhradenom priestore
+### Terminy
+- Rozhodnutia sa dorucuju: FEBRUAR
+- Vznik, zmenu alebo zanik povinnosti hlasite do 30 dni
 
-### Sadzby
-Základ sadzby je výmera užívaného priestranstva v m². Konkrétne sadzby sú vo VZN č. 5/2023 v znení VZN č. 7/2024.
+### Platba
+- IBAN: SK36 7500 0000 0000 2592 7013
+- Online: konto.bratislava.sk (QR kod, Apple Pay, Google Pay)
+- Bankovy prevod alebo postovy poukazm
+- Hotovost do 300 EUR na pokladni v Novej radnici (Primacialne nam. 1)
+- POZOR: Od 1. januara 2026 su SIPO platby ZRUSENE
+
+### Kontakt pre komunalny odpad
+- Tel.: +421 910 520 931 alebo +421 904 099 004 (infolinka)
+- Email: zakazka@bratislava.sk
+- Spravkyne pridelene podla prveho pismena priezviska
+
+---
+
+## DAN ZA UBYTOVANIE
+
+### Kto plati?
+Prevadzkovatelia ubytovacich zariadeni: hotely, penziony, apartmany, Airbnb a pod.
+
+### Sadzba (od 1. 7. 2023)
+- 3,50 EUR za osobu/noc – mestska cast Stare Mesto
+- 3,00 EUR za osobu/noc – ostatne mestske casti
+- Zaklad: pocet prenocovani (max. 60 noci rocne na jedneho hosta)
+
+### Povinnosti prevadzkovatela
+1. Podat registracny formular do 30 dni od zacatia prevadzkovania
+2. Kazdy mesiac podat mesacne vykazy a platit do 15. dna nasledujuceho mesiaca
+3. Variabilny symbol meni sa kazdy mesiac (format: 32[rok][2][c.prevadzky][mesiac])
+
+### Platba
+- IBAN: SK91 7500 0000 0000 2592 6993
+
+### Kontakt
+- Bc. Dajana Baloghova | Tel.: +421 910 512 674 | Email: dajana.baloghova@bratislava.sk
+- Uradne hodiny: pondelok a streda 8:00-12:00, 12:30-17:00
+
+---
+
+## DAN ZA UZIVANIE VEREJNEHO PRIESTRANSTVA
+
+### Co je osobitne uzivanie?
+- Umiestnenie terasy alebo letneho sedenia
+- Vyykopove a stavebne prace
+- Predajny stanok alebo mobilne zariadenie
+- Organizovanie podujati a akcii
+- Reklamne zariadenia
+- Trvale parkovanie na vyhradenom mieste
+- Stanoviste taxisluzby
+Pravna uprava: VZN c. 5/2023 v zneni VZN c. 7/2024
+
+### Zaklad dane
+Vymera v m2 × pocet dni (kazdy aj zacaty m2 a den)
+
+### Oznamovacia povinnost
+Oznamenie podat NAJNESKOR V DEN ZACATIA UZIVANIA.
 
 ### Oslobodenie
-- Organizácie s humanitným, verejnoprospešným alebo charitatívnym cieľom
-- Rozpočtové organizácie mesta
-- Podujatia bez vstupného
+- Humanitarne, kulturne a ekologicke aktivity
+- Rozpoctove organizacie mesta
+- Podujatia bez vstupneho so charitatívnym vynosom
+
+### Platba
+- IBAN: SK07 7500 0000 0000 2533 8163
+
+### Kontakty
+- Podujatia, vyykopove prace, parkovanie: Mgr. Ivona Rajtoková | +421 903 456 071
+- Stavebne zariadenia, letne sedenia: Mgr. Andrea Bencikova | +421 910 516 293
 
 ---
 
-## DIGITÁLNA PLATBA – BRATISLAVSKÉ KONTO
+## HAZARDNE HRY – ODVODY
 
-Cez Bratislavské konto na **konto.bratislava.sk/dane-a-poplatky** môžete:
-- Platiť daň z nehnuteľností a poplatok za komunálny odpad
-- Platiť pomocou QR kódu, platobnej brány, Apple Pay alebo Google Pay
-- Dostávať upozornenia na blížiace sa splatnosti
-
-**Podmienka:** Registrácia a overenie totožnosti v Bratislavskom konte.
+Spravca: Magistrat HM SR Bratislavy
+- Kontakt: Ing. Juraj Ciba | Email: juraj.ciba@bratislava.sk | Tel.: +421 902 985 823
+- Kancelaria: Blagoevova 9, 3. poschodie, c. 306
+- Relevantne VZN: 13/2023, 10/2020, 8/2024, 5/2025 (zakazy prevadzkovania)
 
 ---
 
-## ZMENY V PLATBÁCH (od 1. 12. 2025 a od 1. 1. 2026)
+## DIGITALNA PLATBA – BRATISLAVSKE KONTO
 
-- Od **1. decembra 2025**: Hotovostné platby len na pokladnici v Novej radnici (Primaciálne námestie 1). Pokladnica na Blagoevovej ulici funguje len **bezhotovostne** (kartou).
-- Od **1. januára 2026**: Platba cez **SIPO sa ruší**. Namiesto SIPO platíte:
-  - Bezhotovostným prevodom
-  - Poštovým poukazom
-  - Hotovosťou (do 300 €) na pokladni magistrátu
+Portal: konto.bratislava.sk/dane-a-poplatky
+- Platba QR kodom, platobnou branou, Apple Pay, Google Pay
+- Automaticke upozornenia pred splatnostou
+- Podmienka: registracia + overenie totoznosti v konte
 
 ---
 
-## KONTAKTNÉ INFORMÁCIE
+## DOLEZITE ZMENY
 
-**Adresa pre korešpondenciu:**
-Magistrát hlavného mesta SR Bratislavy
-Oddelenie miestnych daní, poplatkov a licencií
-Primaciálne námestie 1, 811 01 Bratislava
+- Od 1. decembra 2025: Hotovost len v Novej radnici (Primacialne nam. 1). Blagoevova 9 – len kartou.
+- Od 1. januara 2026: SIPO platby za komunalny odpad su ZRUSENE. Nahrada: bankovy prevod, postovy poukazm alebo hotovost do 300 EUR na pokladni.
 
-**Osobné návštevy (stránkové hodiny):**
-Blagoevova 9, 850 05 Bratislava
+---
 
-**Email:** dane@bratislava.sk
-**Telefón:** +421 904 099 004 (voľba 2 pre nehnuteľnosti)
-**Infolinka:** dostupná na webe mesta
+## BANKOVE UCTY
 
-**Úradné hodiny:**
-- Pondelok a streda (stránkový deň): 8:00–12:00, 12:30–17:00
-- Utorok a štvrtok: 8:00–12:00, 12:30–16:00
-- Piatok: 8:00–12:00, 12:30–14:00
+- Dan za uzivanie verejneho priestranstva: SK07 7500 0000 0000 2533 8163
+- Poplatok za komunalny odpad: SK36 7500 0000 0000 2592 7013
+- Dan za ubytovanie: SK91 7500 0000 0000 2592 6993
 
-**Web:** bratislava.sk/mesto-bratislava/dane-a-poplatky
-**Online platby:** konto.bratislava.sk/dane-a-poplatky
+---
+
+## KONTAKTNE INFORMACIE
+
+Oddelenie miestnych dani, poplatkov a licencii
+- Osobne navstevy: Blagoevova 9, 850 05 Bratislava
+- Korespondencia: Primacialne namestie 1, 811 01 Bratislava
+- Tel. (infolinka): +421 904 099 004 (volba 2)
+- Email: dane@bratislava.sk | komunalny odpad: zakazka@bratislava.sk
+- Online infolinka: ba-2.infolinky.textcom.cz/app/
+- Online platby: konto.bratislava.sk/dane-a-poplatky
+
+Uradne hodiny (strankove dni):
+- Pondelok a Streda: 8:00-12:00, 12:30-17:00
+- Utorok a Stvrtok: 8:00-12:00, 12:30-16:00
+- Piatok: 8:00-12:00, 12:30-14:00
 `;
 
 app.post('/api/chat', async (req, res) => {
@@ -205,5 +221,5 @@ app.post('/api/chat', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`Daňový chatbot beží na http://localhost:${PORT}`);
+  console.log(`Danovy chatbot bezi na http://localhost:${PORT}`);
 });
